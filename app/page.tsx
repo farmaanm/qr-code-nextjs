@@ -14,25 +14,39 @@ export default function Home() {
         />
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
           <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+            QR Code Generator API
           </h1>
           <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+            Generate QR codes by calling the API endpoint:{" "}
+            <code className="bg-zinc-100 dark:bg-zinc-800 px-2 py-1 rounded text-sm">
+              /api/qr/[your-text]
+            </code>
           </p>
+          <div className="mt-4">
+            <h2 className="text-xl font-semibold mb-4">Example QR Codes:</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="text-center">
+                <p className="mb-2 text-sm">Hello World</p>
+                <Image
+                  src="/api/qr/Hello%20World"
+                  alt="QR Code for Hello World"
+                  width={150}
+                  height={150}
+                  className="mx-auto"
+                />
+              </div>
+              <div className="text-center">
+                <p className="mb-2 text-sm">https://example.com</p>
+                <Image
+                  src="/api/qr/https%3A%2F%2Fexample.com"
+                  alt="QR Code for https://example.com"
+                  width={150}
+                  height={150}
+                  className="mx-auto"
+                />
+              </div>
+            </div>
+          </div>
         </div>
         <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
           <a
